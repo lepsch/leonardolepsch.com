@@ -9,8 +9,8 @@ export const canonicalPath = {
     (result, { id }) => ({
       ...result,
       [id]: ({ page, photoIndex }: { page?: number; photoIndex?: number } = {}) =>
-        ["/", id, typeof page === "number" ? `${page}` : "", typeof photoIndex === "number" ? `${photoIndex}` : ""]
-          .filter((x) => !!x)
+        ["", id, typeof page === "number" ? `${page}` : false, typeof photoIndex === "number" ? `${photoIndex}` : false]
+          .filter((x) => typeof x === "string")
           .join("/"),
     }),
     // eslint-disable-next-line @typescript-eslint/no-unsafe-argument, @typescript-eslint/prefer-reduce-type-parameter, @typescript-eslint/no-explicit-any

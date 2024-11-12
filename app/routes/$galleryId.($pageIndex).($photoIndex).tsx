@@ -1,5 +1,5 @@
-/* slint-disable @typescript-eslint/restrict-template-expressions */
-import { Link, type LoaderFunctionArgs, type MetaFunction, useLoaderData } from "react-router"
+import { useMemo } from "react"
+import { Link, type MetaFunction, type Params, useParams } from "react-router"
 import { canonicalPath } from "../canonical-path"
 import { BASE_URL, IMAGES_PER_PAGE } from "../constants"
 import galleries, { type Gallery, type GalleryId } from "../galleries"
@@ -9,38 +9,37 @@ import "./gallery.scss"
 const PREVIOUS_LABEL = "Previous"
 const NEXT_LABEL = "Next"
 
-export const loader = ({ params }: LoaderFunctionArgs) => {
-  const galleryId = params["galleryId"] as GalleryId | undefined
-  const gallery = galleries.find((gallery) => gallery.id === galleryId)
-  // eslint-disable-next-line @typescript-eslint/only-throw-error
-  if (!galleryId || !gallery) throw { statusCode: 404, statusText: "Gallery not found" }
-
+const parseParams = (params: Params) => {
   const photoIndexParam = params["photoIndex"]
   const photoIndex = photoIndexParam ? parseInt(photoIndexParam) : null
   const pageParam = params["pageIndex"]
   const page = (pageParam ? parseInt(pageParam) : undefined) || 0
-
-  return { galleryId, photoIndex, page }
+  const galleryId = params["galleryId"] as GalleryId | undefined
+  return { galleryId, page, photoIndex }
 }
 
-export const meta: MetaFunction<typeof loader> = ({ data }) => [
-  ...(data
-    ? [
-        {
-          tagName: "link",
-          rel: "canonical",
-          href: `${BASE_URL}${canonicalPath[data.galleryId](data)}`,
-        },
-      ]
-    : []),
-]
+export const meta: MetaFunction = ({ params }) => {
+  const { galleryId, page, photoIndex } = parseParams(params)
+  return [
+    ...(galleryId
+      ? [
+          {
+            tagName: "link",
+            rel: "canonical",
+            href: `${BASE_URL}${canonicalPath[galleryId]({ page, photoIndex })}`,
+          },
+        ]
+      : []),
+  ]
+}
 
 export default function Gallery() {
-  const { galleryId, photoIndex, page } = useLoaderData<typeof loader>()
-  // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
-  const gallery = galleries.find((gallery) => gallery.id === galleryId)! as Gallery
-  const { images, title, subtitle } = gallery
+  const params = useParams()
+  const { galleryId, page, photoIndex } = useMemo(() => parseParams(params), [params])
+  const gallery = galleries.find((gallery) => gallery.id === galleryId) as Gallery | undefined
+  if (!galleryId || !gallery) return null
 
+  const { images, title, subtitle } = gallery
   const totalPages = getGalleryTotalPages(gallery)
   const pageImages = images.slice(page * IMAGES_PER_PAGE, page * IMAGES_PER_PAGE + IMAGES_PER_PAGE)
 
