@@ -1,0 +1,167 @@
+h2 {
+  text-align: center;
+  color: #B3B3B3;
+  /* font-weight: 100; */
+  font-size: 13pt;
+  margin: 0px;
+  margin-bottom: 10px;
+}
+
+h3 {
+  text-align: center;
+  color: #B3B3B3;
+  /* font-weight: 100; */
+  font-size: 10pt;
+  margin: 0px;
+}
+
+.main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.main .pages {
+  padding: 10px;
+  padding-right: 0px;
+  display: flex;
+}
+
+.main .pages .page.previous {
+  margin-left: 25px;
+}
+
+.main .pages .page.next {
+  padding-right: 0px;
+}
+
+.main .page {
+  padding: 5px;
+  color: #B3B3B3;
+  font-size: 14px;
+  text-align: center;
+}
+
+.main .page.active {
+  border: solid 1px #7f7f7f;
+}
+
+.main .page a, .main .page a:link, .main .page a:hover {
+  text-decoration: underline;
+  color: inherit;
+}
+
+.gallery {
+  margin-top: 15px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+
+.gallery .thumbnails {
+  display: grid;
+  grid-template: repeat(3, 162px) / repeat(3, 162px);
+}
+
+
+.gallery ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+.gallery .thumbnail {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-top: 1px solid #292929;
+  border-left: 1px solid #292929;
+  background-color: #141414;
+  aspect-ratio: 1;
+}
+
+.gallery .thumbnail:hover {
+	background-color: #242424;
+}
+
+.gallery .thumbnail:nth-child(3n) {
+  border-right: 1px solid #292929;
+}
+
+.gallery .thumbnail:nth-child(n+7) {
+  border-bottom: 1px solid #292929;
+}
+
+.modal {
+  position: fixed;
+  background-color: transparent;
+  inset: 0px;
+  z-index: 1000;
+}
+
+.modal .content {
+  position: absolute;
+  inset: 0px;
+  border: none;
+  background: transparent;
+  overflow: hidden;
+  border-radius: 0px;
+  outline: none;
+  padding: 0px;
+}
+
+.modal .content a {
+  color: inherit;
+  text-decoration: inherit;
+}
+
+.modal .content .outer {
+  background-color: rgba(0, 0, 0, 0.85);
+  outline: none;
+  width: 100%;
+  height: 100%;
+}
+
+.modal .content .outer .inner {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.modal .content .outer .inner .frame {
+  padding-top: 44px;
+  width: 630px;
+  background-color: #212121;
+  border: 1px solid #292929;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.modal .content .outer .inner .frame .description {
+  margin: 15px;
+  font-size: 12px;
+  width: calc(100% - 30px);
+}
+
+.modal .content .outer .inner .frame img {
+  margin-left: 15px;
+  margin-right: 15px;
+  max-width: 600px;
+}
+
+
+.home::before {
+  content: '\002630';
+  margin: 0;
+  position: fixed;
+  left: 15px;
+  top: 15px;
+}
