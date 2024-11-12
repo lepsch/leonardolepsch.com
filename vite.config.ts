@@ -13,7 +13,7 @@ const dynamicRoutes = [
       canonicalPath[gallery.id](),
       canonicalPath[gallery.id]({ page }),
       ...Array.from({ length: IMAGES_PER_PAGE }).map((_, photoIndex) =>
-        canonicalPath[gallery.id]({ page, photoIndex }),
+        canonicalPath[gallery.id]({ page, photoIndex: page * IMAGES_PER_PAGE + photoIndex }),
       ),
     ]),
   ),
