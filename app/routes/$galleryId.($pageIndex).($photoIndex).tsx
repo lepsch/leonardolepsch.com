@@ -16,7 +16,7 @@ export const loader = ({ params }: LoaderFunctionArgs) => {
   if (!galleryId || !gallery) throw { statusCode: 404, statusText: "Gallery not found" }
 
   const photoIndexParam = params["photoIndex"]
-  const photoIndex = photoIndexParam ? parseInt(photoIndexParam) : undefined
+  const photoIndex = photoIndexParam ? parseInt(photoIndexParam) : null
   const pageParam = params["pageIndex"]
   const page = (pageParam ? parseInt(pageParam) : undefined) || 0
 

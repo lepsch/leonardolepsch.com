@@ -3,7 +3,9 @@ import galleries, { type GalleryId } from "./galleries"
 export const canonicalPath = {
   home: "/",
   contact: "/contact",
-  ...galleries.reduce<Record<GalleryId, (options?: { page?: number; photoIndex?: number | undefined }) => string>>(
+  ...galleries.reduce<
+    Record<GalleryId, (options?: { page?: number; photoIndex?: number | undefined | null }) => string>
+  >(
     (result, { id }) => ({
       ...result,
       [id]: ({ page, photoIndex }: { page?: number; photoIndex?: number } = {}) =>
