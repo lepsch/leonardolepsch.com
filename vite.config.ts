@@ -10,6 +10,7 @@ import { getGalleryTotalPages } from "./app/utils"
 const dynamicRoutes = [
   ...galleries.flatMap((gallery) =>
     Array.from({ length: getGalleryTotalPages(gallery) }).flatMap((_, page) => [
+      canonicalPath[gallery.id](),
       canonicalPath[gallery.id]({ page }),
       ...Array.from({ length: IMAGES_PER_PAGE }).map((_, photoIndex) =>
         canonicalPath[gallery.id]({ page, photoIndex }),

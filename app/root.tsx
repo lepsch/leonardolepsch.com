@@ -11,7 +11,7 @@ import {
 import { BASE_URL, DOMAIN } from "./constants"
 
 import "normalize.css"
-import "./app.css"
+import "./app.scss"
 
 export const loader = () => {
   return {
