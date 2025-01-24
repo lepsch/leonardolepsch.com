@@ -21,9 +21,7 @@ const dynamicRoutes = [
 
 export default defineConfig(({ command, isSsrBuild }) => ({
   plugins: [
-    reactRouter({
-      prerender: ({ getStaticPaths }) => [...getStaticPaths(), ...dynamicRoutes],
-    }),
+    reactRouter(),
     tsconfigPaths(),
     sitemap({
       hostname: BASE_URL,
