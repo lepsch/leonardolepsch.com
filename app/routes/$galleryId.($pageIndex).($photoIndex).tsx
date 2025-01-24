@@ -66,9 +66,7 @@ export default function Gallery() {
                     photoIndex: index + page * IMAGES_PER_PAGE,
                   })}
                 >
-                  <div>
-                    <img src={image.thumbnail} alt="" />
-                  </div>
+                  <img src={image.thumbnail} alt="" />
                 </Link>
               </li>
             ))}
