@@ -1,3 +1,4 @@
+import outdent from "outdent"
 import type { Gallery } from "./Gallery"
 
 const _mg_0816 = "/images/burano/_mg_0816.jpg"
@@ -129,6 +130,13 @@ const gallery = {
   id: "burano",
   images,
   title: "Burano",
+  text: outdent`
+    Burano situa-se na lagoa de Veneza, e tal como a sua vizinha sete quilómetros mais a sul, Veneza, é na realidade uma localidade constituída por várias ilhas pequenas ligadas por pontes entre si.
+
+    Localizada cerca de Torcello no extremo norte da Lagoa, é conhecida pelos seus cristais e trabalho em renda. É habitada por aproximadamente 3.000 pessoas.
+
+    É uma ilha muito tranquila, com casas bonitas e de cores vivas, possui canais no lugar de ruas e barcos no lugar de carros.
+  `,
 } as const satisfies Gallery
 
 export default gallery

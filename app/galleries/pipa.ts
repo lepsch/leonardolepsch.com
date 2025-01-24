@@ -1,6 +1,7 @@
+import outdent from "outdent"
 import type { Gallery } from "./Gallery"
 
-const _0 = "/images/pipa/0.jpg"
+// const _0 = "/images/pipa/0.jpg"
 const _01 = "/images/pipa/01.jpg"
 const _02 = "/images/pipa/02.jpg"
 const _03 = "/images/pipa/03.jpg"
@@ -18,7 +19,7 @@ const _14 = "/images/pipa/14.jpg"
 const _15 = "/images/pipa/15.jpg"
 const _16 = "/images/pipa/16.jpg"
 
-const _0_t = "/images/pipa/thumbnails/0.jpg"
+// const _0_t = "/images/pipa/thumbnails/0.jpg"
 const _01_t = "/images/pipa/thumbnails/01.jpg"
 const _02_t = "/images/pipa/thumbnails/02.jpg"
 const _03_t = "/images/pipa/thumbnails/03.jpg"
@@ -37,10 +38,10 @@ const _15_t = "/images/pipa/thumbnails/15.jpg"
 const _16_t = "/images/pipa/thumbnails/16.jpg"
 
 const images: Gallery["images"] = [
-  {
-    original: _0,
-    thumbnail: _0_t,
-  },
+  // {
+  //   original: _0,
+  //   thumbnail: _0_t,
+  // },
   {
     original: _01,
     thumbnail: _01_t,
@@ -111,6 +112,13 @@ const gallery = {
   id: "pipa",
   images,
   title: "Pipa",
+  text: outdent`
+    Pipa (Kite)
+
+    Between beaches, hills, and slums of Rio de Janeiro, little ones cut the heavens with light sheets of paper. The kite, valued by the poor infancy of the city, acquired a private dialect and a content of competitiveness. Mixing milled glass and glue, the "cerol" is obtained, that mixture is used in the long lines of cotton that raise them on air, sharpening them. Like this, each one defends his flag, displayed from hundreds of meters of the ground.
+
+    With fast and coordinated arm movements, they maneuver their kites with each other, cutting them. This activity has been amusing the children of poor families all over the city, amid noble neighborhoods and internationally famous beaches such as Ipanema and Copacabana. It expresses the most spontaneous side of the youth.
+  `,
 } as const satisfies Gallery
 
 export default gallery

@@ -9,4 +9,5 @@ export interface Gallery {
   readonly id: string
   readonly title: string
   readonly subtitle?: string
+  readonly text?: string;
 }

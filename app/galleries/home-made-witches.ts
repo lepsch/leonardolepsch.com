@@ -385,6 +385,31 @@ const gallery = {
   images,
   title: "Home Made Witches",
   subtitle: "Living back in the burning times",
+  text: outdent`
+    Voices of the little ones are crying out from Central Africa, to be more precise from the Niger Delta in the South of Nigeria, where people are practising what was common in the Middle Age when people were labelled as witches by the church and burned alive on the streets. Déjà vu!
+
+    The main difference between now and then is the fact that then they used to burn adults practicing black magic and evil sorcery and now the main target are mischievous children.
+
+    It is the result of a syncretism phenomenon originated from the fusion between the Neo-Pentecostal evangelical movement with its prosperity theology and the millenary witchcraft beliefs from the pagan African religions. It's also another scheme to make money but a scheme that is destroying the Nigerian families.
+
+    The pattern of the cases is quite standard and became a doctrine in many Pentecostal churches. When a "pastor" or "prophet" finds out about a misfortune in one of his church's families such someone lost a job, became ill or died, the pastor will accuse one of this family's children of been a witch and will blame the child of practising witchcraft and causing this misfortune.
+
+    Usually the families believe that the most mischievous child is the witch. Their pastor will then offer to exorcise this child but will charge a fee, usually equivalent to three months of the local average wage. The exorcism ritual practiced is in itself a torture but in many of the cases the families can't afford it and the results are even more tragic. The child will go through a process of torture and ostracism and even murder by hers or his own family.
+
+    The same Holy Bible that says "Love casts out all fear" is again been used to cause fear on people and driving them to cast out their love and their beloved little ones. Passages are literally applied like a verse from the Old Testament which says "do not allow a witch to live".
+
+    In many registered cases children were burned with acid, hot water or fire; some had nails across their heads and broken limbs; some were forsaken on the streets even been under four years old; some were tied with fence wire to a tree in the middle of the bushes and left to starve to death, while others were buried alive.
+
+    Local agencies say that in only two states of Nigeria around 15.000 children have been stigmatized and around 1.000 have been murdered since it started.
+
+    It started less than a decade ago but is spreading fast in Central Africa having also alarming number of cases in Democratic Republic of Congo.
+
+    So far there were two NGOs fighting the problem, one called Stepping Stone Nigeria who fights for the stigmatized children's rights and an orphanage called C.R.A.R.N that rescue stigmatized and abandoned children from the streets where they are often abused and murdered.
+
+    Recently a team of Brazilian missionaries' participants of a movement called Way to the Nations started a pioneer project in the area fighting the ignorance of the people, bringing enlightenment about the Gospels, casting out the fear caused by pagan teachings and beliefs, changing the life of many.
+
+    Now these three NGOs are working together and hard, fighting the causes and the consequences of the problem. It will be a long term project but all of them are committed not to rest while they hear that children are being abused and burned, and in the name of Jesus!
+  `
 } as const satisfies Gallery
 
 export default gallery

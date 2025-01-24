@@ -39,7 +39,7 @@ export default function Gallery() {
   const gallery = galleries.find((gallery) => gallery.id === galleryId) as Gallery | undefined
   if (!galleryId || !gallery) return null
 
-  const { images, title, subtitle } = gallery
+  const { images, title, subtitle, text } = gallery
   const totalPages = getGalleryTotalPages(gallery)
   const pageImages = images.slice(page * IMAGES_PER_PAGE, page * IMAGES_PER_PAGE + IMAGES_PER_PAGE)
 
@@ -48,6 +48,14 @@ export default function Gallery() {
       <main className="main">
         <h2>{title}</h2>
         <h3>{subtitle}</h3>
+        {text && (
+          <details className="details">
+            <summary>Read More</summary>
+            {text.split("\n").map((paragraph, index) => (
+              <p key={index}>{paragraph}</p>
+            ))}
+          </details>
+        )}
         <div className="gallery">
           <ul className="thumbnails">
             {pageImages.map((image, index) => (

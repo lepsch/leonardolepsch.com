@@ -1,3 +1,4 @@
+import outdent from "outdent"
 import type { Gallery } from "./Gallery"
 
 const _01 = "/images/mills-flour/01.jpg"
@@ -57,6 +58,15 @@ const gallery = {
   id: "mills-flour",
   images,
   title: "Mill's Flour",
+  text: outdent`
+    Farinhada, esta palavra gostosa até de falar, denomina o ritual comunitário de feitio da farinha de mandioca de forma artesanal manifestado de norte a sul do Brasil.
+
+    Em Santa Catarina, esta prática e saberes envolvidos estão muito ligados à história e à memória de diversas comunidades, sendo considerada como patrimônio cultural imaterial do estado e da capital, Florianópolis.
+
+    Uma das comunidades de referência desta tradição que ainda mantém um Engenho de Farinha em atividade é a Costa da Lagoa, localizada na lagoa da Conceição e com acesso apenas por trilha ou barco. No Engenho de Farinha da Vila Verde várias gerações de crianças puderam vivenciar nas últimas décadas esta prática ancestral, além de degustar o sabor único da farinha polvilhada produzida à várias mãos num engenho artesanal.
+
+    Estes registros, captam a magia da Farinhada do Engenho de Farinha da Vila Verde na Costa da Lagoa, mergulhando na história e ancestralidade da região.
+  `,
 } as const satisfies Gallery
 
 export default gallery

@@ -1,3 +1,4 @@
+import outdent from "outdent"
 import type { Gallery } from "./Gallery"
 
 const _01 = "/images/portugal-pequeno/01.jpg"
@@ -87,6 +88,9 @@ const gallery = {
   id: "portugal-pequeno",
   images,
   title: "Portugal Pequeno",
+  text: outdent`
+    Portugal Pequeno é um local histórico em Niterói, no Rio de Janeiro, que recebeu este nome devido à presença de uma colônia de portugueses.
+  `,
 } as const satisfies Gallery
 
 export default gallery
