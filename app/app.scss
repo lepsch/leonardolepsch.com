@@ -59,6 +59,10 @@ ul {
   font-size: 12pt;
   padding: 15px;
   padding-top: 60px;
+
+  li:not(:first-child) {
+    margin-top: 10px;
+  }
 }
 
 .mainpage .content .cover {
